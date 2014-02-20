@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo full_a700-userdebug
+add_lunch_combo full_nuclear_inet-userdebug

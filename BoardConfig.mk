@@ -13,12 +13,12 @@
 # limitations under the License.
 
 # Use the non-open-source part, if present
--include vendor/allwinner/a700/BoardConfigVendor.mk
+-include vendor/allwinner/nuclear_inet/BoardConfigVendor.mk
 
 # Use the part that is common between all allwinner
 include device/allwinner/common/BoardConfig.mk
 
-# BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/allwinner/a700/recovery_keys.c
+# BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/allwinner/nuclear_inet/recovery_keys.c
 
 TARGET_ARCH :=arm
 TARGET_KERNEL_CONFIG := sun5i_defconfig

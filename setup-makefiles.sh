@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VENDOR=allwinner
-DEVICE=a700
+DEVICE=nuclear_inet
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
