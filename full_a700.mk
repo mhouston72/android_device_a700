@@ -22,8 +22,8 @@
 #
 
 # Camera
-PRODUCT_PACKAGES := \
-    Camera
+#PRODUCT_PACKAGES := \
+#    Camera
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
