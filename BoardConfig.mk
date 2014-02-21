@@ -18,10 +18,9 @@
 # Use the part that is common between all allwinner
 include device/allwinner/common/BoardConfig.mk
 
-# BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/allwinner/nuclear_inet/recovery_keys.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/allwinner/nuclear_inet/recovery_keys.c
 
-TARGET_ARCH :=arm
-TARGET_KERNEL_CONFIG := sun5i_defconfig
+TARGET_KERNEL_CONFIG := nuclear_inet_defconfig
 
 SW_BOARD_USES_GSENSOR_TYPE := bma250
 SW_BOARD_GSENSOR_XY_REVERT := true

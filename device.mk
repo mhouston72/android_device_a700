@@ -30,11 +30,11 @@ PRODUCT_COPY_FILES += \
 #
 
 PRODUCT_COPY_FILES += \
-	device/allwinner/nuclear_inet/init.sun5i.modules.rc:root/init.sun5i.modules.rc \
+	device/allwinner/nuclear_inet/init.sun4i.modules.rc:root/init.sun4i.modules.rc \
 	device/allwinner/nuclear_inet/config/camera.cfg:system/etc/camera.cfg \
 	device/allwinner/nuclear_inet/config/media_profiles.xml:system/etc/media_profiles.xml \
 	device/allwinner/nuclear_inet/config/axp20-supplyer.kl:system/usr/keylayout/axp20-supplyer.kl \
-	device/allwinner/nuclear_inet/config/sun4i-keyboard.kl:system/usr/keylayout/sun5i-keyboard.kl \
+	device/allwinner/nuclear_inet/config/sun4i-keyboard.kl:system/usr/keylayout/sun4i-keyboard.kl \
 	device/allwinner/nuclear_inet/config/Goodix-TS-board-3.idc:system/usr/idc/Goodix-TS-board-3.idc \
 	device/allwinner/nuclear_inet/config/devicespecific.sh:recovery/root/sbin/devicespecific.sh \
-
+#
