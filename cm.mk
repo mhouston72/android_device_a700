@@ -18,4 +18,4 @@ PRODUCT_MODEL := A700
 PRODUCT_MANUFACTURER := Allwinner
 
 #Set build fingerprint / ID / Product Name etc
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nuclear_inet BUILD_FINGERPRINT="allwinner/nuclear_inet/nuclear_inet:4.0.4/IMM76I/330937:user/release-keys" PRIVATE_BUILD_DESC="nuclear_inet-user 4.0.4 IMM76I 330937 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nuclear_inet BUILD_FINGERPRINT="allwinner/nuclear_inet/nuclear_inet:4.2.2/JDQ39/20140220:userdebug/test-keys" PRIVATE_BUILD_DESC="nuclear_inet-userdebug 4.2.2 JDQ39 20140220 test-keys"
