@@ -26,7 +26,7 @@ PRODUCT_PACKAGES := \
     Camera
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $build/target/product/full_base.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 # This is where we'd set a backup provider if we had one
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
 # Inherit from our device
