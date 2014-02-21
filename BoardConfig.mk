@@ -19,6 +19,8 @@
 include device/allwinner/common/BoardConfig.mk
 
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/allwinner/nuclear_inet/recovery_keys.c
+TARGET_RECOVERY_INITRC := ../../device/allwinner/nuclear_inet/recovery.init.rc
+BOARD_HAS_NO_SELECT_BUTTON := true
 
 TARGET_KERNEL_CONFIG := sun51_defconfig
 
@@ -59,11 +61,6 @@ TARGET_NO_KERNEL := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_SIMULATOR := false
 TARGET_PROVIDES_INIT_RC := true
-
-# CWM
-#TARGET_RECOVERY_INITRC := device/ainol/elf2/recovery.init.rc
-#BOARD_HAS_NO_SELECT_BUTTON := true
-#BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 
 TARGET_BOOTANIMATION_PRELOAD := true
 

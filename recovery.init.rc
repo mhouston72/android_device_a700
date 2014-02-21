@@ -1,0 +1,74 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# init.rc for CWM 6.0.2.8 - Allwinner A13
+#
+# DoPa - minor cleanups and reorganization (2013/03/05)
+#      - changed USB productID for 'mass_storage,adb'
+#        to match the value used when booted normally
+#      - added nand.ko because this kernel requires it
+#      - added ft5x_ts.ko to support a capacitive back button on older tablets
+#      - added scaling_governor entry (2013/03/18)
+
+on early-init
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor fantasy
+    start ueventd
+
+on init
+    sysclktz 0
+    loglevel 8
+
+    export PATH /sbin
+    export ANDROID_ROOT /system
+    export ANDROID_DATA /data
+    export EXTERNAL_STORAGE /sdcard
+
+    insmod /nand.ko 
+
+    mkdir /boot
+    mkdir /bootloader
+    mkdir /cache
+    mkdir /data
+    mkdir /datadata
+    mkdir /emmc
+    mkdir /sdcard
+    mkdir /sd-ext
+    mkdir /system
+    mount tmpfs tmpfs /tmp
+    
+    chown root shell /tmp
+    chmod 0775 /tmp
+
+    write /sys/devices/virtual/bdi/179:0/read_ahead_kb 2048
+    write /sys/devices/virtual/bdi/7:0/read_ahead_kb 2048
+    write /sys/devices/virtual/bdi/93:0/read_ahead_kb 2048
+
+on boot
+
+    ifup lo
+    hostname localhost
+    domainname localdomain
+
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 18D1
+    write /sys/class/android_usb/android0/idProduct 0003
+    write /sys/class/android_usb/android0/functions mass_storage,adb
+    setprop service.adb.root 1
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop sys.usb.state mass_storage,adb
+
+    insmod /ft5x_ts.ko 
+
+    class_start default
+
+service ueventd /sbin/ueventd
+    critical
+
+service adbd /sbin/adbd recovery
+    disabled
+
+service erase_misc /sbin/sh -c "echo -en '\0' > /dev/block/nandf; sync"
+    oneshot
+
+service recovery /sbin/recovery
+
