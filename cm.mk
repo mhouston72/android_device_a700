@@ -2,7 +2,7 @@
 PRODUCT_RELEASE_NAME := A700
 
 # Boot animation
-TARGET_BOOTANIMATION_NAME := horizontal-1024x768
+TARGET_BOOTANIMATION_NAME := horizontal-800x480
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
